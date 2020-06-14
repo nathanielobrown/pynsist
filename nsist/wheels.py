@@ -31,7 +31,7 @@ class CompatibilityScorer:
 
     def score_platform(self, platform):
         # target = 'win_amd64' if self.bitness == 64 else 'win32'
-        d = {self.platform: 2, 'any': 1}
+        d = {self.platform: 3, 'win': 2, 'any': 1}
         return max(d.get(p, 0) for p in platform.split('.'))
 
     def score_abi(self, abi):
